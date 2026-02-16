@@ -1,0 +1,412 @@
+/* General Body Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f7fa;
+    /* Fallback */
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Background Image Styling */
+#bg-image {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Navigation Bar */
+.navbar {
+    padding: 10px 40px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.top-nav {
+    background-color: rgba(0, 82, 155, 0.95);
+    /* Professional blue */
+    justify-content: space-between;
+}
+
+.top-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.bottom-nav {
+    background-color: rgba(168, 112, 28, 0.95);
+    /* Gold/Brown */
+    justify-content: center;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    color: white;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.bottom-nav .nav-list {
+    font-weight: bold;
+    font-size: 1em;
+    gap: 30px;
+}
+
+.logo {
+    height: 40px;
+    /* Adjust height as needed */
+    width: auto;
+}
+
+.toggle-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 0.9em;
+    margin: 0;
+    /* Override default button margin */
+}
+
+.toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Main Content Container */
+.container {
+    padding: 20px 40px;
+    max-width: 650px;
+    /* Adjusted for a better single-column view */
+    margin: 20px auto;
+}
+
+h1 {
+    color: #00529B;
+    border-bottom: 2px solid #e1e1e1;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+h2 {
+    color: #333;
+    margin-top: 0;
+}
+
+/* Calculator Layout */
+.calculator {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Changed to a single column to stack sections */
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    position: relative;
+    /* For absolute positioning of slideshow */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    min-height: 750px;
+}
+
+.calculator>* {
+    position: relative;
+    z-index: 2;
+    /* Ensure content sits above the background */
+}
+
+/* Input Fields */
+.inputs label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.inputs input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Results Display */
+.results {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-radius: 4px;
+}
+
+.highlight {
+    background-color: #aaabac;
+    /* Light grey highlight */
+}
+
+.results hr {
+    border: none;
+    border-top: 1px solid #e1e1e1;
+    margin: 5px 0;
+    /* Add some vertical space around the line */
+}
+
+.results .net-salary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00529B;
+}
+
+/* Tax Bands Table */
+.tax-bands h3 {
+    color: #00529B;
+    margin-top: 0;
+    font-size: 1.1em;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 10px;
+}
+
+.tax-bands table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.tax-bands th,
+.tax-bands td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tax-bands th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.note {
+    font-size: 0.85em;
+    color: #666;
+    font-style: italic;
+}
+
+/* Reset Button */
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 25px;
+    background-color: #439bec;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #2f88db;
+}
+
+/* --- Dark Mode Styles --- */
+body.dark-mode {
+    color: #e0e0e0;
+}
+
+body.dark-mode .calculator {
+    background-color: rgba(30, 30, 30, 0.95);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode .tax-bands h3,
+body.dark-mode .results .net-salary {
+    color: #64b5f6;
+    /* Lighter blue for dark background */
+}
+
+body.dark-mode .inputs label {
+    color: #ccc;
+}
+
+body.dark-mode .inputs input {
+    background-color: #2c2c2c;
+    border-color: #444;
+    color: #fff;
+}
+
+body.dark-mode .highlight {
+    background-color: #333;
+    /* Dark grey highlight */
+}
+
+body.dark-mode .results hr,
+body.dark-mode h1,
+body.dark-mode .tax-bands h3 {
+    border-color: #444;
+}
+
+body.dark-mode .tax-bands th {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .tax-bands td {
+    border-color: #444;
+}
+
+body.dark-mode .note {
+    color: #aaa;
+}
+
+/* Footer Styles */
+.footer-top {
+    background-color: rgba(0, 82, 155, 0.95);
+    /* Blue color for the top footer */
+    color: white;
+    /* Making the text white so it's readable */
+    padding: 40px 20px;
+    /* Giving it some space inside */
+    margin-top: 40px;
+    /* Pushing it down from the content above */
+    font-size: 0.9em;
+    /* Slightly smaller font for the footer */
+}
+
+.footer-content {
+    display: flex;
+    /* Using flexbox to arrange the sections side-by-side */
+    justify-content: space-between;
+    /* Spacing out the sections */
+    max-width: 1200px;
+    /* Setting a max width so it doesn't get too wide on big screens */
+    margin: 0 auto;
+    /* Centering the content container */
+    gap: 40px;
+    /* Adding space between the footer sections */
+    flex-wrap: wrap;
+    /* Allowing sections to wrap onto the next line on smaller screens */
+}
+
+.footer-section {
+    flex: 1;
+    /* Allowing each section to grow and take up equal space */
+    min-width: 250px;
+    /* Making sure they don't get too squished */
+}
+
+.footer-section h3 {
+    color: #eee9dc;
+    /* A gold-like color for the heading text */
+    margin-bottom: 15px;
+    /* Space below the heading */
+    font-size: 1.1em;
+    /* Making the heading a bit bigger */
+    text-transform: uppercase;
+    /* Making the text all caps */
+    border-bottom: 2px solid #eeba30;
+    /* This adds the line under the heading */
+    padding-bottom: 10px;
+    /* Adding some space between the text and the line */
+}
+
+.footer-section.left {
+    text-align: left;
+}
+
+.footer-section.center {
+    text-align: left;
+}
+
+.footer-section.right {
+    text-align: right;
+}
+
+.footer-section ul {
+    list-style: disc;
+    /* Using standard dot bullet points */
+    padding-left: 20px;
+    /* Adding some space on the left of the bullets */
+    margin: 0;
+    /* Removing default margin */
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    color: white;
+    /* White link text */
+    text-decoration: none;
+    /* Removing the default underline */
+    transition: color 0.3s;
+    /* Smooth color change on hover */
+}
+
+.footer-section a:hover {
+    color: #eeba30;
+    /* Change color to gold on hover */
+    text-decoration: underline;
+    /* Add an underline on hover */
+}
+
+.social-links {
+    display: flex;
+    /* Using flex to put them in a row */
+    gap: 15px;
+    /* Space between each icon link */
+    justify-content: flex-end;
+}
+
+.social-links a {
+    display: inline-block;
+    /* Making them inline but able to have margins/padding */
+    margin-bottom: 0;
+    /* Removing any bottom margin */
+}
+
+.social-links a i {
+    width: 20px;
+    /* Giving the icon a fixed width for alignment */
+    margin-right: 5px;
+    /* Space between the icon and the text (e.g., "Facebook") */
+}
+
+.footer-bottom {
+    text-align: center;
+    /* Centering the copyright text */
+    padding: 15px;
+    /* Adding some space inside */
+    background-color: white;
+    /* White background */
+    color: #333;
+    /* Dark text color */
+    font-size: 0.9em;
+    /* Slightly smaller font */
+    border-top: 1px solid #e1e1e1;
+    /* A thin line on top to separate it */
+}

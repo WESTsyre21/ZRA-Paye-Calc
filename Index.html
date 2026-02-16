@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZRA PAYE Calculator</title>
+    <link rel="icon" href="ZRA-icon.png" type="image/png">
+    <link rel="stylesheet" href="Calculator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <img src="scientific-calculator.jpg" id="bg-image" alt="Background">
+
+    <header class="navbar top-nav">
+        <img src="ZRA-logo.png" alt="Company Logo" class="logo">
+        <div class="top-nav-right">
+            <ul class="nav-list">
+                <li>About us</li>
+                <li>Tax Payer Charter</li>
+                <li>Tenders</li>
+                <li>Careers</li>
+                <li>Tutorials</li>
+                <li>Contact Us</li>
+            </ul>
+            <button id="darkModeToggle" class="toggle-btn">Dark Mode</button>
+        </div>
+    </header>
+
+    <nav class="navbar bottom-nav">
+        <ul class="nav-list">
+            <li>HOME</li>
+            <li>REGISTRATIONS</li>
+            <li>BUSINESS</li>
+            <li>CUSTOMS</li>
+            <li>PUBLICATIONS</li>
+            <li>STATISTICS</li>
+            <li>TAX PORTAL</li>
+        </ul>
+    </nav>
+
+
+    <main class="container">
+        <div class="calculator">
+            <h1 class="highlight">PAYE Calculator</h1>
+            <div class="inputs">
+                <label for="basicPay">Basic Pay</label>
+                <input type="number" id="basicPay" placeholder="e.g., 10000">
+
+                <label for="allowances">Allowances</label>
+                <input type="number" id="allowances" placeholder="e.g., 2000">
+                <h6>Gross/Taxable pay</h6>
+                <label for="statutory"> Statutory Contributions</label>
+                <input type="number" id="statutory" placeholder="e.g., 100">
+            </div>
+            <div class="results">
+                <div class="result-row">
+                    <span>Gross Pay:</span> <strong id="grossDisplay">K 0.00</strong>
+                </div>
+                <div class="result-row">
+                    <span>PAYE (Tax):</span> <strong id="payeDisplay">K 0.00</strong>
+                </div>
+                <div class="result-row">
+                    <span>NAPSA:</span> <strong id="napsaDisplay">K 0.00</strong>
+                </div>
+                <div class="result-row">
+                    <span>NHIMA:</span> <strong id="nhimaDisplay">K 0.00</strong>
+                </div>
+                <div class="result-row">
+                    <span>Total Contributions:</span> <strong id="totalContribDisplay">K 0.00</strong>
+                </div>
+                <hr>
+                <div class="result-row">
+                    <span>Total Deductions:</span> <strong id="totalDeductionsDisplay">K 0.00</strong>
+                </div>
+                <div class="result-row highlight">
+                    <span class="net-salary">Net Salary:</span> <strong class="net-salary" id="netSalaryDisplay">K
+                        0.00</strong>
+                </div>
+            </div>
+
+            <div class="tax-bands">
+                <h3>PAYE TAX COMPUTATION BANDS 2026</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tax Bands</th>
+                            <th>Chargeable Income</th>
+                            <th>Tax Rate</th>
+                            <th>Tax Due</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>First K5,100.00 @</td>
+                            <td id="band1Income">0</td>
+                            <td>0%</td>
+                            <td id="band1Tax">0</td>
+                        </tr>
+                        <tr>
+                            <td>Next K5,100.01 but not exceeding K7,100.00</td>
+                            <td id="band2Income">0</td>
+                            <td>20%</td>
+                            <td id="band2Tax">0</td>
+                        </tr>
+                        <tr>
+                            <td>Next K7,100.01 but not exceeding K9,200.00</td>
+                            <td id="band3Income">0</td>
+                            <td>30%</td>
+                            <td id="band3Tax">0</td>
+                        </tr>
+                        <tr>
+                            <td>K9,200.01 and Above</td>
+                            <td id="band4Income">0</td>
+                            <td>37%</td>
+                            <td id="band4Tax">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="note">Note: Gross pay shows the tax band category used to calculate your tax</p>
+            </div>
+        </div>
+        <button onclick="resetForm()">Clear</button>
+    </main>
+
+    <script src="Calculator.js"></script>
+
+    <footer class="footer-top">
+        <div class="footer-content">
+            <div class="footer-section left">
+                <h3>CONTACT US</h3>
+                <p>Plot No 1704 Kalambo Road / Villa Elizabetha, Lusaka</p>
+                <p>Call Center: 4111</p>
+                <p>Email: advice@zra.org.zm</p>
+            </div>
+
+            <div class="footer-section center">
+                <h3>OTHER LINKS</h3>
+                <ul>
+                    <li><a href="#">Buy Insurance</a></li>
+                    <li><a href="#">National Pension Scheme Authority</a></li>
+                    <li><a href="#">Bank of Zambia (BOZ)</a></li>
+                    <li><a href="#">Patent and Company Registration Agency</a></li>
+                    <li><a href="#">Ministry of Finance</a></li>
+                    <li><a href="#">Ministry of Commerce Trade and Industry</a></li>
+                    <li><a href="#">Zambia Trade Portal</a></li>
+                    <li><a href="#">Zambia Development Agency</a></li>
+                    <li><a href="#">Common Market for Eastern and Southern Africa</a></li>
+                    <li><a href="#">World Customs Organisation</a></li>
+                    <li><a href="#">World Trade Organisation</a></li>
+                    <li><a href="#">Southern African Development Community</a></li>
+                    <li><a href="#">Organisation for Economic Co-operation and Development</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section right">
+                <h3>SOCIAL MEDIA</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="footer-bottom">
+        <p>&copy; 2025 All rights reserved</p>
+    </footer>
+
+</body>
+
+</html>
